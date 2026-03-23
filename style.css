@@ -59,37 +59,16 @@ nav a:hover {
   padding: 0 1.5rem 4rem;
 }
 
-/* Two-column page layout */
-.page-layout {
-  display: flex;
-  align-items: flex-start;
-  gap: 2.5rem;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 1.5rem 4rem;
-}
-
-.main-content {
-  flex: 1;
-  min-width: 0;
-}
-
-/* Reviews sidebar */
-.reviews-sidebar {
-  width: 260px;
-  flex-shrink: 0;
-  position: sticky;
-  top: 1.5rem;
-}
-
-.reviews-sidebar h3 {
-  margin-top: 0;
+/* Reviews section */
+.reviews-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
 }
 
 #reviews-list {
-  margin-bottom: 1.25rem;
-  max-height: 60vh;
-  overflow-y: auto;
+  margin-bottom: 0;
 }
 
 .review-item {
@@ -114,6 +93,18 @@ nav a:hover {
   font-size: 0.9rem;
   color: #aaa;
   font-family: system-ui, sans-serif;
+}
+
+.review-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.review-form-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
 }
 
 #review-form {
@@ -179,13 +170,9 @@ nav a:hover {
   cursor: default;
 }
 
-@media (max-width: 800px) {
-  .page-layout {
-    flex-direction: column;
-  }
-  .reviews-sidebar {
-    width: 100%;
-    position: static;
+@media (max-width: 600px) {
+  .reviews-section {
+    grid-template-columns: 1fr;
   }
 }
 
