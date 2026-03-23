@@ -71,6 +71,13 @@
       <form id="review-form">
         <input type="text" id="review-name" placeholder="Your name" maxlength="80" required />
         <textarea id="review-body" placeholder="Leave a review..." maxlength="500" required></textarea>
+        <div class="star-input" id="star-input">
+          <span data-value="1">&#9733;</span>
+          <span data-value="2">&#9733;</span>
+          <span data-value="3">&#9733;</span>
+          <span data-value="4">&#9733;</span>
+          <span data-value="5">&#9733;</span>
+        </div>
         <button type="submit">Submit</button>
       </form>
     </aside>
@@ -97,9 +104,23 @@
       list.innerHTML = reviews.map(r => `
         <div class="review-item">
           <span class="review-name">${escapeHtml(r.name)}</span>
+          ${r.rating ? `<span class="review-stars">${'★'.repeat(r.rating)}${'☆'.repeat(5 - r.rating)}</span>` : ''}
           <p class="review-body">${escapeHtml(r.body)}</p>
         </div>
       `).join('');
+    }
+
+    let selectedRating = 0;
+
+    const stars = document.querySelectorAll('#star-input span');
+    stars.forEach(star => {
+      star.addEventListener('mouseover', () => highlightStars(+star.dataset.value));
+      star.addEventListener('mouseout', () => highlightStars(selectedRating));
+      star.addEventListener('click', () => { selectedRating = +star.dataset.value; highlightStars(selectedRating); });
+    });
+
+    function highlightStars(n) {
+      stars.forEach(s => s.classList.toggle('active', +s.dataset.value <= n));
     }
 
     async function submitReview(e) {
@@ -112,11 +133,13 @@
       await fetch(`${SUPABASE_URL}/rest/v1/reviews`, {
         method: 'POST',
         headers: { ...headers, 'Prefer': 'return=minimal' },
-        body: JSON.stringify({ name, body })
+        body: JSON.stringify({ name, body, rating: selectedRating || null })
       });
       document.getElementById('review-form').reset();
       btn.disabled = false;
       btn.textContent = 'Submit';
+      selectedRating = 0;
+      highlightStars(0);
       loadReviews();
     }
 
