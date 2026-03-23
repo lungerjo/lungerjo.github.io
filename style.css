@@ -1,0 +1,187 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Georgia, serif;
+  color: #222;
+  background: #fafafa;
+  line-height: 1.7;
+}
+
+a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+nav {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 3rem;
+}
+
+nav .inner {
+  display: flex;
+  align-items: baseline;
+  gap: 2rem;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+nav .site-name {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #222;
+  margin-right: auto;
+}
+
+nav a {
+  color: #555;
+  font-size: 0.95rem;
+  font-family: system-ui, sans-serif;
+}
+
+nav a:hover {
+  color: #222;
+  text-decoration: none;
+}
+
+.container {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0 1.5rem 4rem;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 0.25rem;
+}
+
+h2 {
+  font-size: 1.2rem;
+  font-weight: normal;
+  color: #555;
+  font-family: system-ui, sans-serif;
+  margin-bottom: 2rem;
+}
+
+h3 {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #888;
+  font-family: system-ui, sans-serif;
+  margin: 2.5rem 0 1rem;
+  border-bottom: 1px solid #e5e5e5;
+  padding-bottom: 0.4rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+.bio {
+  font-size: 1.05rem;
+  margin-bottom: 2rem;
+}
+
+/* Resume */
+.resume-item {
+  margin-bottom: 1.5rem;
+}
+
+.resume-item .role {
+  font-weight: bold;
+}
+
+.resume-item .org {
+  color: #555;
+}
+
+.resume-item .date {
+  font-size: 0.875rem;
+  color: #888;
+  font-family: system-ui, sans-serif;
+  float: right;
+}
+
+.resume-item p {
+  font-size: 0.95rem;
+  margin-top: 0.25rem;
+  margin-bottom: 0;
+  color: #444;
+}
+
+.skills {
+  font-family: system-ui, sans-serif;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+/* Blog list */
+.post-list {
+  list-style: none;
+}
+
+.post-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #f0f0f0;
+  gap: 1rem;
+}
+
+.post-list .post-title {
+  font-size: 1rem;
+}
+
+.post-list .post-date {
+  font-size: 0.85rem;
+  color: #888;
+  font-family: system-ui, sans-serif;
+  white-space: nowrap;
+}
+
+/* Blog post */
+.post-header {
+  margin-bottom: 2rem;
+}
+
+.post-header h1 {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.post-meta {
+  font-size: 0.875rem;
+  color: #888;
+  font-family: system-ui, sans-serif;
+}
+
+.post-body p {
+  margin-bottom: 1.25rem;
+}
+
+.post-body h2 {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #222;
+  font-family: Georgia, serif;
+  margin: 2rem 0 0.75rem;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 2rem;
+  font-family: system-ui, sans-serif;
+  font-size: 0.9rem;
+  color: #555;
+}
